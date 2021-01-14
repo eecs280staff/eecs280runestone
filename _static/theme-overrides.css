@@ -1,0 +1,91 @@
+:root {
+  --background: #ffffff;
+  --outerBackground: #eeeeee;
+  --links: #0645ad;
+  --bodyFont: #000000;
+  --tooltip: #ffffff;
+  --grayToWhite: #333333;
+  --navbar: #f8f8f8;
+  --navbarFont: #707070;
+  --navbarFontHover: #000000;
+  --alerts: #d9edf7;
+  --completionButton: #ffaa2b;
+  --completionButtonHover: #ff9f19;
+  --admonition: #fcf8e3;
+  --admonitionBorder: #fbeed5;
+  --codeButtons: #474949;
+  --codeButtonsBorder: #474949;
+  --dangerAlerts: #f2dede;
+  --successAlerts: #dff0d8;
+}
+
+.journal > form > fieldset > legend {
+  display: none;
+}
+
+.runestone_caption {
+  display: none;
+}
+
+.reveal_button {
+  padding: 2px 6px;
+}
+
+/* Runestone's youtube center option doesn't work.
+This is a workaround. */
+iframe.youtube-video.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+blockquote {
+  font-size: inherit;
+}
+
+.admonition.hint {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.admonition-did-you-know {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.admonition-common-pattern {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.admonition-exercise-files table {
+  margin: 0;
+}
+
+.admonition-exercise-files table .reveal_button {
+  margin: 0 !important;
+  padding: 2px 6px;
+}
+
+.admonition-walkthrough {
+  background-color: #fff2e6;
+  border-color: #f0c7a0;
+}
+
+.admonition-walkthrough .admonition-title {
+  font-style: italic;
+}
+
+.admonition-walkthrough .reveal_button {
+  margin-bottom: 0 !important;
+}
+
+.admonition-walkthrough {
+  background-color: #fff2e6;
+  border-color: #f0c7a0;
+}
+
+.admonition-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
