@@ -96,7 +96,6 @@ Using Pointers and The Dereference Operator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-TODO
 
 .. youtube:: Kpotc1G6lkQ
    :divid: ch03_02_vid_using_pointers
