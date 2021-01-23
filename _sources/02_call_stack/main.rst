@@ -114,6 +114,50 @@ Parameter Passing
 
 You can find examples of both the pass-by-value and pass-by-reference versions of :code:`swap()` on Lobster as :file:`L02.3_swap` in the eecs280 exercises.
 
+**Exercise**
+
+.. fillintheblank:: ch02_03_ex_parameter_passing
+
+   Consider this code:
+
+   .. code-block:: cpp
+
+      #include <iostream>
+      using namespace std;
+      
+      int func(int x, int &y, int &z) {
+        x = z;
+        y = z;
+        return z + 1;
+      }
+      
+      int main() {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        
+        int d = func(a, b, c);
+      }
+
+   What are the values of each variable at the end of the main function?
+   
+   |blank| :code:`a`
+   
+   |blank| :code:`b`
+   
+   |blank| :code:`c`
+   
+   |blank| :code:`d`
+
+   - :1: Correct!
+     :.*: Try again
+   - :3: Correct!
+     :.*: Try again
+   - :3: Correct!
+     :.*: Try again
+   - :4: Correct!
+     :.*: Try again
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Procedural Abstraction
@@ -129,6 +173,42 @@ Procedural Abstraction
    :align: center
 
 |
+
+**Exercise**
+
+.. fillintheblank:: ch02_04_ex_procedural_abstraction
+
+   Categorize each of the following according to whether they are part of the interface or implementation (write "interface" or "implementation" in each box).
+   
+   |blank| Function declaration in .h file
+   
+   |blank| Function definition in .cpp file
+   
+   |blank| Code inside the function's curly braces
+   
+   |blank| Which input values are valid or invalid for the function
+   
+   |blank| Comments inside the function to clarify tricky lines of code
+   
+   |blank| RME comment before the function declaration in .h file
+
+   - :interface: Correct!
+     :.*: Try again
+   - :implementation: Correct!
+     :.*: Try again
+   - :implementation: Correct!
+     :.*: Try again
+   - :interface: Correct!
+     :.*: Try again
+   - :implementation: Correct!
+     :.*: Try again
+   - :interface: Correct!
+     :.*: Try again
+
+
+
+
+
 
 
 
