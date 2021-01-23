@@ -99,6 +99,7 @@ Using Pointers and The Dereference Operator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
+Now that we've got addresses, let's take a look at how to use those addresses to get back to the original object. This is called "dereferencing" a pointer - if we imagine a pointer as an arrow pointing to an object, dereferencing is just following the arrow.
 
 .. youtube:: Kpotc1G6lkQ
    :divid: ch03_02_vid_using_pointers
@@ -108,7 +109,7 @@ Using Pointers and The Dereference Operator
 
 |
 
-When working with pointers and addresses instead of objects themselves, we can say we are working with those objects *indirectly* or using *indirection*.
+A reminder on terminology: when working with pointers and addresses instead of objects themselves, we can say we are working with those objects *indirectly* or using *indirection*.
 
 - The :code:`&` operator takes the address of an object, adding a layer of indirection to obtain a pointer.
 - The :code:`*` operator peels away a layer of indirection, following a pointer to the object it points to.
