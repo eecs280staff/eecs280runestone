@@ -26,11 +26,17 @@
 The Call Stack and Procedural Abstraction
 ============================================================================================
 
+This chapter is all about functions, but from two different, complementary perspectives:
+
+1. Expanding our conceptual model of program execution and memory to include functions.
+2. Understanding how functions and procedural abstraction contribute to good program design.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Intro to Lobster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
+
+Before we start, let me cover a few basics for the `Lobster <https://lobster.eecs.umich.edu>`_ program visualization tool, which we'll use throughout several lecture examples and exercises in the future.
 
 .. youtube:: SyYblfASLlE
    :divid: ch02_01_vid_intro_to_lobster
@@ -45,7 +51,9 @@ Functions and The Call Stack
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
+The memory allocated for each function is generally called an **activation record** or (more commonly) a **stack frame**. Each function takes up a certain amount of memory that depends on how many local variables it may need to store, and this memory is allocated and freed as needed during the program.
 
+Because of the way that functions call work (i.e. the called function has to finish and return before you can start back up in the original function), it's natural to use a stack to represent the memory frames for each function. Whichever function is called most recently is added to the top of the stack, and will always be removed before any other functions that were already on the stack (this is called the "Last In First Out" or "LIFO" property).
 
 .. youtube:: jT077RVOUgk
    :divid: ch02_02_vid_functions_and_the_call_stack
@@ -102,7 +110,7 @@ Parameter Passing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-
+Two primary mechanisms for parameter passing are pass-by-value and pass-by-reference. Let's take a look at the differences between the two, as well as how they relate to function stack frames.
 
 .. youtube:: xetnP9gQXEY
    :divid: ch02_03_vid_parameter_passing
@@ -164,7 +172,7 @@ Procedural Abstraction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-
+Turning now to our second, higher-level point, how can we use functions to implement effective procedural abstractions that make our code easier to write, understand, and maintain?
 
 .. youtube:: WVqOirVNBqI
    :divid: ch02_04_vid_procedural_abstraction
