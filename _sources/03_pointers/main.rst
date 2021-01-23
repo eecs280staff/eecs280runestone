@@ -26,11 +26,14 @@
 Pointers
 ============================================================================================
 
+The fundamental idea of pointers is that we might like to work with **addresses** of objects in our programs as well as just their **values/data**. Why? Pretty much the same reason we use addresses anywhere else - sometimes we need to work **indirectly**. For example, in the "real world", an address book refers to the places that people live, but it doesn't literally contain those places! (That wouldn't even make sense.) Likewise, in a program we might want several different parts of our code to refer to the same data structure, but we don't want them all to literally have a local copy of that data. It would be better to know the address of the data and just go look it up when we need to.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Addresses and Pointers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
+
+First, let's take a look at how we can find out the address of variables/objects in our program using the :code:`&` operator.
 
 .. youtube:: e364_zq4nxU
    :divid: ch03_01_vid_addresses_and_pointers
