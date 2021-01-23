@@ -226,7 +226,7 @@ Project 1 File Structure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
-
+The file structure in project 1 is a great example of implementing several different modules in our code and using procedural abstractions as the bridge between those modules.
 
 .. youtube:: a26xmgSPE6U
    :divid: ch02_05_vid_project1_file_structure
