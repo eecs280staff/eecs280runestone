@@ -312,5 +312,67 @@ For each of the following code snippets, briefly describe what the **last** line
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This chapter is only partially finished! More coming soon!
+Pass-by-Pointer Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 4
+
+We can achieve an effect similar to pass-by-reference by using a pointer instead. Here's the basic idea - just like with pass-by-reference, we want to work with the original object (e.g. in a :code:`main` function) without making a copy when we pass it in as a parameter. So, instead of passing the original object, we pass its address as a pointer parameter. That parameter is technically copied, but who cares! A copy of an address will still get you back to the original location.
+
+Check out this video to see it in action:
+
+.. youtube:: T0SN1PxaIVk
+   :divid: ch03_04_vid_pass_by_pointer
+   :height: 315
+   :width: 560
+   :align: center
+
+|
+
+**Exercise**
+
+Load up the :code:`L03.3_swap-by-pointer` exercise on `Lobster <https://lobster.eecs.umich.edu>`_. The code contains a broken :code:`swap` function that doesn't actually do anything. Fix it by modifying the function to use pass-by-pointer, so that you can swap the original objects through pointer parameters. Once you're done, the values of the original variables in main should be swapped correctly! (Note that Lobster will show a completed checkpoint once you've got the right output, and may also try to give you some hints along the way if you run into any bugs.)
+
+.. shortanswer:: ch03_04_ex_pass_by_pointer
+
+   Paste your finished code for the exercise here.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Pointer Mischief
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 5
+
+Check out the code in the :file:`L03.4_pointer_mischief` exercise on `Lobster <https://lobster.eecs.umich.edu>`_. (The code is also included below.) The code uses a dubious function to get the address of the variable :code:`a`, calls a random function to print :code:`42` (this is definitely not a trick :D ), and then prints out :code:`a` through the address we got earlier. But all is not as it seems! What happens? Write your explanation in the box below. (Don't worry if you're not sure what happens - take some time and give it your best guess - I'll explain what's going in in the video farther below.)
+
+.. code-block:: cpp
+
+   #include <iostream>
+   using namespace std;
+   
+   int * getAddress(int x) {
+     return &x;  // It's a trap!
+   }
+   
+   void printAnInt(int someInt) {
+     cout << someInt << endl;
+   }
+   
+   int main() {
+     int a = 3;
+     int *ptr = getAddress(a);
+     printAnInt(42);
+     cout << *ptr << endl;
+   }
+
+.. shortanswer:: ch03_05_ex_pointer_mischief
+
+   Why doesn't the code work as expected? What happens instead?
+
+Once you're finished, go ahead and watch this video for a debrief on the exercise:
+
+.. youtube:: v6ovLP_EOgM
+   :divid: ch03_05_vid_pointer_mischief
+   :height: 315
+   :width: 560
+   :align: center
+
+|

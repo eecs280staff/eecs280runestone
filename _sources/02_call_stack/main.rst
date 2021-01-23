@@ -57,7 +57,7 @@ Functions and The Call Stack
 
 **Exercise**
 
-Consider the following code, which is also available on Lobster as :file:`L02.2_call_stack` in the eecs280 exercises. Trace through the code either manually or using the Lobster simulation and answer the questions below.
+Consider the following code, which is also available on `Lobster <https://lobster.eecs.umich.edu>`_ as :file:`L02.2_call_stack` in the eecs280 exercises. Trace through the code either manually or using the Lobster simulation and answer the questions below.
 
 .. code-block:: cpp
 
@@ -112,7 +112,7 @@ Parameter Passing
 
 |
 
-You can find examples of both the pass-by-value and pass-by-reference versions of :code:`swap()` on Lobster as :file:`L02.3_swap` in the eecs280 exercises.
+You can find examples of both the pass-by-value and pass-by-reference versions of :code:`swap()` on `Lobster <https://lobster.eecs.umich.edu>`_ as :file:`L02.3_swap` in the eecs280 exercises.
 
 **Exercise**
 
