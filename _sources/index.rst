@@ -1,6 +1,6 @@
 .. raw:: html
 
-   <script src="../_static/common/js/common.js"></script>
+   <script src="../_static/common/js/common2.js"></script>
 
 ========
 EECS 280
@@ -19,3 +19,5 @@ Chapters
   :maxdepth: 1
 
   01_intro/toctree.rst
+  02_call_stack/toctree.rst
+  03_pointers/toctree.rst

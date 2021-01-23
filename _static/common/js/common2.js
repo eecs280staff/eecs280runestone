@@ -10,10 +10,10 @@ $(() => $("a.image-reference").removeAttr("href"));
 
 // Change suggested videos at the end of youtube embeds
 // to only show videos from the same channel.
-$(() =>
-  setTimeout(() =>
-    $('iframe.youtube-video').each(function() {
-      $(this).attr("src", $(this).attr("src") + "&rel=0");
-    }),
-    5000)
-);
+// $(() =>
+//   setTimeout(() =>
+//     $('iframe.youtube-video').each(function() {
+//       $(this).attr("src", $(this).attr("src") + "&rel=0");
+//     }),
+//     5000)
+// );
