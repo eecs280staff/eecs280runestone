@@ -23,34 +23,51 @@
    </style>
 
 =======================================================================
-Arrays
+Strings, Streams, and I/O
 =======================================================================
 
-You'll often want to represent containers or sequences of data in your programs, and how to do this in a way that makes the data easily (for you) and efficiently (for the computer) accessible is one of the fundamental questions in the *data structures*. In C++, there are a lot of options, and we'll take a look at many throughout the course. These same sorts of data structures are applicable in most any programming language and thinking through which data structures to use for a particular problem is one of the fundamentals of good programming.
+This lecture is all about text, or more precisely any data that can be represented as a sequence of characters. This is a natural form for human-friendly data, but it's also used for 
 
-To start, we'll focus on **arrays**, which are the most basic container for sequential data and also one of the most ubiquitous. In fact, *many* other containers, including :code:`vector` and :code:`string`, are actually built on top of arrays! (We'll come back to this later.)
-
-We'll also see that arrays provide very efficient access to data in a couple different ways:
-
-- **Sequential Access**: Iterating through a sequence of elements from start to end.
-- **Random Access**: Accessing an element at a particular index (i.e. position) in the sequence.
+TODO
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Arrays and Memory
+C-Style Strings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-Arrays are a low-level abstraction over memory that we can fit into the memory model we've been building up so far...
+We'll start with the most fundamental representation for a string: an **array of characters**. We'll call this a C-style string (or cstring for short), because this is the predominant form for strings in the original C language.
 
-.. youtube:: 4r_X4JyNLT0
-   :divid: ch04_01_vid_arrays_and_memory
+There's one additional trick to C-style strings - instead of keeping track of the length of the array of characters separately (e.g. in an int variable that we pass along to any array functions), we instead mark the end of the string data in the array with a special character called a **sentinel**. Any code processing the string keeps an eye out for the sentiel value to know when to stop.
+
+Here's a brief introduction:
+
+.. youtube:: TODO
+   :divid: ch05_01_vid_intro_to_cstrings
    :height: 315
    :width: 560
    :align: center
 
 |
 
+To recap:
+
+- A cstring is a sequence of characters, living in an array, terminated by a null character (:code:`\0`).
+- The null character acts as a sentinel, so that code processing the cstring knows where to stop.
+- When initializing a cstring from a string literal, the compiler automatically adds the null character for us.
+- It's customary to work with cstrings via traversal by pointer.
+
+There are three main options for creating a cstring:
+
+- | :code:`const char *welcomeMsg = "Welcome to EECS 280!";`
+  | Point at a string literal. We can use it, but we don't plan to modify the contents (and the compiler enforces this with the const).
+- | :code:`char hexColor[] = "00274C";`
+  | Create a local array to contain a *copy* of the given cstring. The example here has space for 7 characters (6 regular plus the null character). We can modify the contents however we want, but the size is fixed.
+- | :code:`char filename[1024];`
+  | Create a "buffer" that may hold many different cstrings (one at a time). The array contains lots of space, because some strings might be longer than others. The placement of the null character lets us know the end of the current cstring living in the buffer. For example, we might want to iterate through a list of file names and process them.
+
 **Exercise**
+
+   TODO
 
 .. fillintheblank:: ch04_01_ex_arrays_and_memory
    :casei:
@@ -96,16 +113,33 @@ Arrays are a low-level abstraction over memory that we can fit into the memory m
 
 |
 
+-----------------------------------------------------------------------
+Processing C-style Strings
+-----------------------------------------------------------------------
+
+For almost any operation we would like to perform on a cstring, the basic idea is that we set up a traversal by pointer loop that iterates until it happens upon the null character. Let's take a look at how this plays out in code and a few examples.
+
+.. youtube:: TODO
+   :divid: ch05_01_vid_processing_cstrings
+   :height: 315
+   :width: 560
+   :align: center
+
+|
+
+
+-----------------------------------------------------------------------
+The :code:`<cstring>` Library
+-----------------------------------------------------------------------
+
+Because cstrings are just built on fundamental types like arrays, :code:`char`, and pointers, you don't need to include any libraries to use them. However, many common operations for cstrings are available as functions in the :code:`<cstring>` Library, which you can :code:`#include` at the top of your files if you need them. You can find documentation for these in a number of places, but online resources like `http://www.cplusplus.com/reference/cstring/ <http://www.cplusplus.com/reference/cstring/>`_ are generally a good place to start.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Arrays, Pointers, and Pointer Arithmetic
+C++ Strings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-Because an array is essentially just a sequence of objects (one for each element in the array) that are laid out contiguously in memory, we can leverage pointers (i.e. addresses) to work with arrays. Here's one example, informally:
-
-   How does array indexing work? For example, how does :code:`arr[7]` know where to find the memory object for the element at index 7? Well, let's say we can find the address of the first element in the array, and call it :math:`A`. Then, we also know that :code:`arr` contains integers, which each take up 4 bytes in memory. Then, because arrays are always contiguous in memory, we can compute that :code:`arr[7]` is :math:`7*4` bytes from the beginning of the array. It's address should then be :math:`A + 7 * 4`.
-
-Let's take a look at the details of how this works in code, including the relationship between arrays and pointers and building up to array indexing.
+TODO
 
 .. youtube:: DyEOyWsHAUc
    :divid: ch04_02_vid_arrays_pointers_pointer_arithmetic
@@ -115,68 +149,11 @@ Let's take a look at the details of how this works in code, including the relati
 
 |
 
-.. admonition:: Heads Up!
 
-   Unlike the informal example before the video, when you use pointer arithmetic in code, you can just write something like :code:`arr + i`. You don't need to specify how many bytes each array element takes, since the compiler already knows this from the type of the pointer (e.g. an :code:`int *` points into an array of :code:`int`, and the compiler knows how many bytes an :code:`int` will take up on its target machine architecture).
 
 **Exercise**
 
-Trace this code and draw a memory diagram as you go. Once you're finished, use your diagram to answer the question below.
-
-.. code-block:: cpp
-
-   int main() {
-     int arr[5] = {6, 3, 2, 4, 5};
-     int *a = arr;
-     int *b = arr + 2;
-     int *c = b + 1;
-     int *d = &arr[1];
-   
-     ++a;
-     --b;
-     c = d;
-     c += 2;
-   
-     cout << *a << endl;
-     cout << *(a + 2) << endl;
-     cout << (a - d) << endl;
-     cout << (b - c) << endl;
-     cout << b[2] << endl;
-     cout << *(arr+5) << endl;
-   }
-
-.. fillintheblank:: ch04_02_ex_arrays_pointers_pointer_arithmetic
-
-   What values are printed for each of the expressions sent to :code:`cout` at the end of the program? If the expression results in undefined behavior, write "undefined".
-
-   |blank| :code:`*a`
-   
-   |blank| :code:`*(a + 2)`
-   
-   |blank| :code:`(a - d)`
-   
-   |blank| :code:`(b - c)`
-   
-   |blank| :code:`b[2]`
-   
-   |blank| :code:`*(arr+5)`
-
-   - :3: Correct!
-     :.*: Try again
-   - :4: Correct!
-     :.*: Try again
-   - :0: Correct!
-     :.*: Try again
-   - :-2: Correct!
-     :.*: Try again
-   - :4: Correct!
-     :.*: Try again
-   - :undefined: Correct!
-     :.*: Try again
-
-
-To check your work, find the file :file:`L04.pointer_arithmetic` in the EECS 280 code on `Lobster <https://lobster.eecs.umich.edu>`_. You can use the simulation to check your diagram and to see the correct output for each expression. If you'd like, you can also make a personal copy of the code and change it around to answer any "what-if" questions or get more practice predicting the program's behavior.
-
+TODO? Probably just save for later with I/O exercise
 
 .. admonition:: Walkthrough
 
@@ -191,13 +168,11 @@ To check your work, find the file :file:`L04.pointer_arithmetic` in the EECS 280
 |
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Pointer Comparisons
+Command Line Arguments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-Just like we can do arithmetic with pointers in a natural way, shifting addresses back and forth, we can also implement pointer comparisons in terms of addresses. Basically, :code:`ptr1 < ptr2` will be true if and only if :code:`ptr1` points to an address that is numerically lower than the address :code:`ptr2` points to. Or, put simply, if :code:`ptr1` is pointing somewhere before :code:`ptr2` in memory.
-
-Here's a video of me saying that, plus a couple additional details/restrictions :). 
+TODO
 
 .. youtube:: ffPi8C1tXek
    :divid: ch04_03_vid_pointer_comparisons
@@ -206,6 +181,20 @@ Here's a video of me saying that, plus a couple additional details/restrictions 
    :align: center
 
 |
+
+To get an argument out of :code:`argv`, you generally just use indexing, e.g. :code:`argv[x]` where :code:`x` is the index of the argument you want. Remember that the argument at index :code:`0` is just the name of the executable, so your "real" arguments will start indexed at :code:`1`.
+
+Once you have an argument, there are three things you might want to do with it:
+
+- | :code:`string redactWord = argv[1];`
+  | Immediately convert it to a C++ string (e.g. by storing in a :code:`string` variable). C++ strings are MUCH easier to work with and support convenient operators like :code:`==`.
+- | :code:`ifstream fin(argv[2]);`
+  | :code:`ofstream fout(argv[3]);`
+  | Use it directly somewhere that a cstring is readily accepted. For example, an :code:`ifstream` or :code:`ofstream` can be constructed from a cstring with the name of an input/output file.
+- | :code:`int redactLength = atoi(argv[4]);`
+  | For arguments you want to interpret as a number (rather than a "string of digits"), convert it to an :code:`int` using :code:`atoi()` or to a :code:`double` using :code:`atof()`.
+
+- 
 
 **Exercise**
 
