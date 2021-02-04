@@ -26,9 +26,7 @@
 Strings, Streams, and I/O
 =======================================================================
 
-This lecture is all about text, or more precisely any data that can be represented as a sequence of characters. This is a natural form for human-friendly data, but it's also used for 
-
-TODO
+This lecture is all about strings, streams, and input/output (I/O). Fundamentally, these all involve processing data represented as sequences of characters, perhaps the text of a book, an encrypted message, or even the source code for one of our programs as it's about to be digested by the compiler!
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 C-Style Strings
@@ -41,7 +39,7 @@ There's one additional trick to C-style strings - instead of keeping track of th
 
 Here's a brief introduction:
 
-.. youtube:: TODO
+.. youtube:: 0z_SYTVQnA0
    :divid: ch05_01_vid_intro_to_cstrings
    :height: 315
    :width: 560
@@ -65,68 +63,45 @@ There are three main options for creating a cstring:
 - | :code:`char filename[1024];`
   | Create a "buffer" that may hold many different cstrings (one at a time). The array contains lots of space, because some strings might be longer than others. The placement of the null character lets us know the end of the current cstring living in the buffer. For example, we might want to iterate through a list of file names and process them.
 
-**Exercise**
-
-   TODO
-
-.. fillintheblank:: ch04_01_ex_arrays_and_memory
-   :casei:
-
-   Determine whether each of the following statements are true or false.
-   
-   |blank| Arrays can be resized if you need more space.
-   
-   |blank| The elements in an array are stored contiguously in memory.
-   
-   |blank| All elements in a particular array must be the same type.
-   
-   |blank| All individual array elements must be the same size in memory.
-   
-   |blank| Each array element lives at the same address in memory.
-
-   - :false|f: Correct!
-     :.*: Try again
-   - :true|t: Correct!
-     :.*: Try again
-   - :true|t: Correct!
-     :.*: Try again
-   - :true|t: Correct!
-     :.*: Try again
-   - :false|f: Correct!
-     :.*: Try again
-
-|
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch04_01_revealwt_arrays_and_memory
-  
-      **false** Arrays can be resized if you need more space.
-   
-      **true** The elements in an array are stored contiguously in memory.
-      
-      **true** All elements in a particular array must be the same type.
-      
-      **true** All individual array elements must be the same size in memory.
-      
-      **false** Each array element lives at the same address in memory.
-
-|
-
 -----------------------------------------------------------------------
 Processing C-style Strings
 -----------------------------------------------------------------------
 
-For almost any operation we would like to perform on a cstring, the basic idea is that we set up a traversal by pointer loop that iterates until it happens upon the null character. Let's take a look at how this plays out in code and a few examples.
+For almost any operation we would like to perform on a cstring, the basic idea is that we set up a traversal by pointer loop that iterates until it happens upon the null character. As the pointer walks through the string, we perform whatever data processing or modifications we need by dereferencing the pointer to work with individual characters.
 
-.. youtube:: TODO
-   :divid: ch05_01_vid_processing_cstrings
+It's generally a good idea to wrap up this kind of work in a function that can be reused wherever we need it. Let's take a look at how this plays out in code with a few examples.
+
+.. youtube:: lhoW6iwCl9M
+   :divid: ch05_02_vid_processing_cstrings
    :height: 315
    :width: 560
    :align: center
 
 |
 
+**Exercise**
+
+Write the function :code:`strcpy` described at the end of the video above.
+
+This exercise is available on `Lobster <https://lobster.eecs.umich.edu>`_ as :code:`L05.2_strcpy`.
+
+.. shortanswer:: ch05_01_ex_strcpy
+
+   Paste your finished code for the exercise here.
+
+   
+
+.. admonition:: Walkthrough
+
+   .. reveal:: ch05_01_revealwt_strcpy
+  
+      .. youtube:: KOS5Oe2FvO0
+         :divid: ch05_01_wt_strcpy
+         :height: 315
+         :width: 560
+         :align: center
+
+|
 
 -----------------------------------------------------------------------
 The :code:`<cstring>` Library
@@ -134,48 +109,110 @@ The :code:`<cstring>` Library
 
 Because cstrings are just built on fundamental types like arrays, :code:`char`, and pointers, you don't need to include any libraries to use them. However, many common operations for cstrings are available as functions in the :code:`<cstring>` Library, which you can :code:`#include` at the top of your files if you need them. You can find documentation for these in a number of places, but online resources like `http://www.cplusplus.com/reference/cstring/ <http://www.cplusplus.com/reference/cstring/>`_ are generally a good place to start.
 
+|
+|
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 C++ Strings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-TODO
+You may have worked with the C++ :code:`string` type in your intro programming course or other previous experience. If not, or if you're primarily familiar with strings from a different language, we encourage you to check out one of several tutorials or documentation resources available online. (If you didn't take one of the intro courses here at UM, please also feel free to reach out and I can connect you with the material on :code:`string` from one of those courses.)
 
-.. youtube:: DyEOyWsHAUc
-   :divid: ch04_02_vid_arrays_pointers_pointer_arithmetic
+In general, you should prefer to use C++ :code:`string` where you can. It's an easier datatype to work with than a cstring and supports intuitive string operators like :code:`==`, :code:`<`, :code:`+`, :code:`=`, etc. Basically it works well and doesn't have some of the unpredictable quirks. (Contrast this to the fact that by its nature as an array of characters, cstring variables won't work with any of the operators just mentioned.)
+
+Why are we learning about cstrings if they're so...un-useful?
+
+- Sometimes you need to use them, for example, command-line arguments (see below) rely on cstrings.
+- It's an interesting look into a low-level representation of a string, very much similar to the way a C++ :code:`string` is actually implemented internally.
+- The notion of a sentinel-terminated sequence generalizes and will show up elsewhere.
+- More practice with pointers! Yay. :)
+
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File Input and Output Streams
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. section 3
+
+.. youtube:: CLW-DIZ5AOw
+   :divid: ch05_03_vid_input_and_output_streams
    :height: 315
    :width: 560
    :align: center
 
 |
 
+For reference, here is the final example from the video:
 
+.. code-block:: cpp
 
-**Exercise**
+   #include <iostream>
+   #include <string>
+   #include <fstream>
+   
+   using namespace std;
+   
+   int main() {
+   
+     string inName = "in.txt";
+     string outName = "out.txt";
+   
+     cout << "Copying from " << inName << " to " << outName << endl;
+   
+     string wordToRemove;
+     cout << "What word would you like to remove? ";
+     cin >> wordToRemove;
+   
+     ifstream fin(inName);
+     ofstream fout(outName);
+     if ( !fin.is_open() ) {
+       cout << "Unable to open " << inName << endl;
+       return 1;
+     }
+     
+     if ( !fout.is_open() ) {
+       cout << "Unable to open " << outName << endl;
+       return 1;
+     }
+   
+     string word;
+     while (fin >> word) {
+       if (word != wordToRemove) { fout << word << " "; }
+       else { fout << "*****" << " "; }
+     }
+   
+     fin.close();
+     fout.close();
+   }
 
-TODO? Probably just save for later with I/O exercise
+Here's another example, which also showcases the :code:`stoi()` function, which converts from a :code:`string` to the :code:`int` value that it represents. In this case, we want to read a sequence of numbers from the user via :code:`cin` and add them together. The user may enter as many numbers as they like and then types :code:`"done"` to indicate they are finished. Because we need to accommodate both numbers and a string, we use the most general type - :code:`string` and then convert to an :code:`int` where appropriate using :code:`stoi`.
 
-.. admonition:: Walkthrough
+.. code-block:: cpp
 
-   .. reveal:: ch04_02_revealwt_arrays_pointers_pointer_arithmetic
-  
-      .. youtube:: LaBI6fgTOAM
-         :divid: ch04_02_wt_arrays_pointers_pointer_arithmetic
-         :height: 315
-         :width: 560
-         :align: center
+   #include <iostream>
+   #include <string>
+   
+   using namespace std;
+   
+   int main() {
+     int sum = 0;
+     string word;
+     while (cin >> word && word != "done") {
+       sum += stoi(word);
+     }
+     cout << "sum is " << sum << endl;
+   }
 
-|
+This example is also available on `Lobster <https://lobster.eecs.umich.edu>`_ as :file:`L05.3_cin_sum`
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Command Line Arguments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 3
+.. section 4
 
-TODO
-
-.. youtube:: ffPi8C1tXek
-   :divid: ch04_03_vid_pointer_comparisons
+.. youtube:: mXJA13Go9qk
+   :divid: ch05_04_vid_command_line_arguments
    :height: 315
    :width: 560
    :align: center
@@ -186,203 +223,73 @@ To get an argument out of :code:`argv`, you generally just use indexing, e.g. :c
 
 Once you have an argument, there are three things you might want to do with it:
 
-- | :code:`string redactWord = argv[1];`
-  | Immediately convert it to a C++ string (e.g. by storing in a :code:`string` variable). C++ strings are MUCH easier to work with and support convenient operators like :code:`==`.
-- | :code:`ifstream fin(argv[2]);`
-  | :code:`ofstream fout(argv[3]);`
-  | Use it directly somewhere that a cstring is readily accepted. For example, an :code:`ifstream` or :code:`ofstream` can be constructed from a cstring with the name of an input/output file.
-- | :code:`int redactLength = atoi(argv[4]);`
-  | For arguments you want to interpret as a number (rather than a "string of digits"), convert it to an :code:`int` using :code:`atoi()` or to a :code:`double` using :code:`atof()`.
+1. | :code:`string wordToRemove = argv[1];`
+   | Immediately convert it to a C++ string (e.g. by storing in a :code:`string` variable). C++ strings are MUCH easier to work with and support convenient operators like :code:`==`.
+2. | :code:`ifstream fin(argv[2]);`
+   | :code:`ofstream fout(argv[3]);`
+   | Use it directly somewhere that a cstring is readily accepted. For example, an :code:`ifstream` or :code:`ofstream` can be constructed from a cstring with the name of an input/output file.
+3. | :code:`int redactLength = atoi(argv[4]);`
+   | For arguments you want to interpret as a number (rather than a "string of digits"), convert it to an :code:`int` using :code:`atoi()` or to a :code:`double` using :code:`atof()`. (Or, if you already converted to a C++ :code:`string`, use :code:`stoi()` or :code:`stod()`.)
 
-- 
+If you like, you can always start with option #1. It's almost never a bad idea to go ahead and switch over to a C++ :code:`string` where you can.
 
-**Exercise**
-
-.. fillintheblank:: ch04_03_ex_pointer_comparisons
-   :casei:
-
-   Given an array and some pointers:
-
-   .. code-block:: cpp
-
-      int main() {
-        int arr[5] = { 5, 4, 3, 2, 1 };
-        int *ptr1 = arr + 2;
-        int *ptr2 = arr + 3;
-      }
-
-   Write true or false for each of these comparisons
-
-   |blank| :code:`ptr1 == ptr2`
-   
-   |blank| :code:`ptr1 == ptr2 - 1`
-   
-   |blank| :code:`ptr1 < ptr2`
-   
-   |blank| :code:`*ptr1 < *ptr2`
-   
-   |blank| :code:`ptr1 < arr + 5`
-
-   - :false|f: Correct!
-      :.*: Try again
-   - :true|t: Correct!
-      :.*: Try again
-   - :true|t: Correct!
-      :.*: Try again
-   - :false|f: Correct!
-      :.*: Try again
-   - :true|t: Correct!
-      :.*: Try again
-
-|
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch04_03_revealwt_pointer_comparisons
-  
-      **false** :code:`ptr1 == ptr2`
-      
-      **true** :code:`ptr1 == ptr2 - 1`
-      
-      **true** :code:`ptr1 < ptr2`
-      
-      **false** :code:`*ptr1 < *ptr2`
-      
-      **true** :code:`ptr1 < arr + 5`
-
-|
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Traversal by Pointer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 4
-
-There are two fundamental ways to approach sequential access of the elements in an array using a loop, which we might also call "traversal" or "iteration" through the array's elements:
-
-- Traversal by **Index**: Start an index variable (e.g. :code:`i`) at :code:`0`, increase it by 1 on each iteration of the loop, and plug :code:`i` into an indexing operation to find each element of the array.
-- Traversal by **Pointer**: Start a pointer (e.g. :code:`ptr`) at the beginning of an array, move it forward one space in memory on each iteration, and dereference it along the way to visit each element of the array.
-
-.. youtube:: NtnOo1MNoCE
-   :divid: ch04_04_vid_traversal_by_pointer
-   :height: 315
-   :width: 560
-   :align: center
-
-|
-
-Neither of traversal by pointer or traversal by index is fundamentally better or more efficient. You should use the one that feels more natural to you, unless there's a requirement for you to do otherwise. For many people, in most use cases, that's probably traversal by index.
-
-However, we're taking a look at traversal by pointer now because:
-
-1. It's another interesting thing you can do with pointers.
-2. It is customarily used in certain contexts, like with C-style strings, which we'll look at next time.
-3. It's conceptually similar to traversal by *iterator*, which we'll learn about later on in the course.
-
-**Exercise**
-
-Which of the following code snippets correctly implement traversal by pointer?
-
-.. shortanswer:: ch04_04_ex_traversal_by_pointer_01
-
-   Does this code snippet correctly implement traversal by pointer over the array `arr` to print out each of the array's elements? If not, what's wrong with it? Why does this cause a problem?
-
-   .. code-block:: cpp
-
-      int arr[5] = {1,2,3,4,5};
-      
-      for(int *ptr = 0; ptr < 5; ++ptr) {
-         cout << *ptr << endl;
-      }
-
-.. shortanswer:: ch04_04_ex_traversal_by_pointer_02
-
-   Does this code snippet correctly implement traversal by pointer over the array `arr` to print out each of the array's elements? If not, what's wrong with it? Why does this cause a problem?
-
-   .. code-block:: cpp
-
-      int arr[5] = {1,2,3,4,5};
-      
-      for(int *ptr = arr; ptr < arr + 5; ++ptr) {
-         cout << ptr << endl;
-      }
-
-.. shortanswer:: ch04_04_ex_traversal_by_pointer_03
-
-   Does this code snippet correctly implement traversal by pointer over the array `arr` to print out each of the array's elements? If not, what's wrong with it? Why does this cause a problem?
-
-   .. code-block:: cpp
-
-      int arr[5] = {1,2,3,4,5};
-      
-      for(int *ptr = arr; ptr < ptr + 5; ++ptr) {
-         cout << *ptr << endl;
-      }
-
-Surprise! Each of the code snippets in the questions about contains a mistake. If you didn't find this, double check the ones you hadn't found yet, take a look at the code on `Lobster <https://lobster.eecs.umich.edu>`_ in exercise :file:`L04.2_traversal_by_pointer`, or check out the walkthrough video.
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch04_04_revealwt_traversal_by_pointer
-  
-      .. youtube:: PEgsl2a30Sc
-         :divid: ch04_04_wt_traversal_by_pointer
-         :height: 315
-         :width: 560
-         :align: center
-
-|
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Array Parameters and Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. section 5
-
-When working with arrays, it's often helpful to write helper functions that process the arrays in some way, perhaps using a loop to iterate through each element and perform some operation.
-
-An example of this would be a function that prints out an array...
-
-.. youtube:: esTbqG1K24U
-   :divid: ch04_05_vid_array_functions_and_parameters
-   :height: 315
-   :width: 560
-   :align: center
-
-|
-
-Two big takeaways here:
-
-1. The compiler turns array parameters into pass-by-pointer behind the scenes. That gives us a pointer we can use to access the original array. This is similar to pass-by-reference, but technically different.
-2. Because of 1., the only thing passed into an array function is a pointer to the first element. That means we have to pass the size of the original array as a separate parameter.
-
-
-**Exercise**
-
-Write a function called :code:`maxValue` that finds the value of the maximum element in the array. Here's an example of how you might use the function:
+Again, for reference, here's the final code for the redact example, modified to use command line arguments as shown in the video.
 
 .. code-block:: cpp
 
-   int main(){
-     int arr[4] = {2, 3, 6, 1};
-     int m = maxValue(arr, 4); // Pass ptr to first elem of arr, plus size
-     cout << m << endl; // prints 6
+   #include <iostream>
+   #include <string>
+   #include <fstream>
+   
+   using namespace std;
+   
+   int main(int argc, char *argv[]) {
+   
+     // Usage message shown if the user runs with incorrect command line args
+     if (argc != 5) {
+       cout << "Usage: redact WORD INFILE OUTFILE NUM_STARS" << endl;
+       return 1;
+     }
+   
+     string inName = argv[2];
+     string outName = argv[3];
+   
+     cout << "Copying from " << inName << " to " << outName << endl;
+   
+     string wordToRemove = argv[1];
+     int numStars = atoi(argv[4]); // to double - atof()
+     string replacement(numStars, '*'); // e.g. numStars is 3, makes ***
+   
+     ifstream fin(inName);
+     ofstream fout(outName);
+     if ( !fin.is_open() ) {
+       cout << "Unable to open " << inName << endl;
+       return 1;
+     }
+     
+     if ( !fout.is_open() ) {
+       cout << "Unable to open " << outName << endl;
+       return 1;
+     }
+   
+     string word;
+     while (fin >> word) {
+       if (word != wordToRemove) { fout << word << " "; }
+       else { fout << replacement << " "; }
+     }
+   
+     fin.close();
+     fout.close();
    }
 
-This exercise is available on `Lobster <https://lobster.eecs.umich.edu>`_ as :code:`L04.3_maxValue`. Lobster includes a few checkpoints for the individual elements of traversal-by-pointer to help you track your progress.
+-----------------------------------------------------------------------
+The Structure of :code:`argv`
+-----------------------------------------------------------------------
 
-.. shortanswer:: ch04_05_ex_array_functions_and_parameters
-
-   Paste your finished code for the exercise here.
-
-   
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch04_05_revealwt_array_functions_and_parameters
-  
-      .. youtube:: lJ7cLJwddYI
-         :divid: ch04_05_wt_array_functions_and_parameters
-         :height: 315
-         :width: 560
-         :align: center
+.. youtube:: fRfxPaOX7b4
+   :divid: ch05_04_vid_argv_structure
+   :height: 315
+   :width: 560
+   :align: center
 
 |
