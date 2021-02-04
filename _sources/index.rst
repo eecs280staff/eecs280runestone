@@ -21,3 +21,5 @@ Chapters
   01_intro/toctree.rst
   02_call_stack/toctree.rst
   03_pointers/toctree.rst
+  04_arrays/toctree.rst
+  05_strings_streams_io/toctree.rst
