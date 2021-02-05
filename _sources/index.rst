@@ -23,3 +23,5 @@ Chapters
   03_pointers/toctree.rst
   04_arrays/toctree.rst
   05_strings_streams_io/toctree.rst
+  06_compound_objects/toctree.rst
+  07_adts_in_c/toctree.rst
