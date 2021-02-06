@@ -26,14 +26,14 @@
 Abstract Data Types in C
 =======================================================================
 
-TODO
+.. TODO
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction to ADTs in C
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
-TODO
+.. TODO
 
 .. youtube:: sX2-rECyB8M
    :divid: ch07_01_vid_intro_to_adts_in_c
@@ -43,7 +43,7 @@ TODO
 
 |
 
-TODO
+.. TODO
 
 **Exercise**
 
@@ -201,9 +201,9 @@ ADT Initialization and Representation Invariants
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
-TODO
+.. TODO
 
-.. youtube:: GSjBT7UusRU
+.. youtube:: cvtrJPdnZsY
    :divid: ch07_02_vid_representation_invariants
    :height: 315
    :width: 560
@@ -211,7 +211,7 @@ TODO
 
 |
 
-TODO
+.. TODO
 
 **Exercise**
 
@@ -259,11 +259,13 @@ TODO
    **Representation Invariants**
 
 
+In patricular, I recommend watching the walkthrough video here, since the solution is used to introduce some new concepts/examples.
+
 .. admonition:: Walkthrough
 
    .. reveal:: ch07_02_revealwt_representation_invariants
   
-      .. youtube:: TODO
+      .. youtube:: Wl4e6fAJs-U
          :divid: ch07_02_wt_representation_invariants
          :height: 315
          :width: 560
@@ -276,30 +278,13 @@ Interfaces and Implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
-TODO
+.. TODO
 
-.. youtube:: WO91KyakW-I
+.. youtube:: GSjBT7UusRU
    :divid: ch07_03_vid_interfaces_and_implementations
    :height: 315
    :width: 560
    :align: center
-
-|
-
-TODO
-
-**Exercise**
-
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch07_03_revealwt_interfaces_and_implementations
-  
-      .. youtube:: TODO
-         :divid: ch07_03_wt_interfaces_and_implementations
-         :height: 315
-         :width: 560
-         :align: center
 
 |
 
@@ -308,9 +293,9 @@ Composing ADTs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
-TODO
+.. TODO
 
-.. youtube:: cvtrJPdnZsY
+.. youtube:: WO91KyakW-I
    :divid: ch07_04_vid_composing_adts
    :height: 315
    :width: 560
@@ -318,22 +303,7 @@ TODO
 
 |
 
-TODO
-
-**Exercise**
-
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch07_04_revealwt_composing_adts
-  
-      .. youtube:: TODO
-         :divid: ch07_04_wt_composing_adts
-         :height: 315
-         :width: 560
-         :align: center
-
-|
+.. TODO
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,28 +338,12 @@ At the top of any test files, you'll want to make sure to :code:`#include` the f
 |
 
 
-**Exercise**
-
-TODO
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch07_05_revealwt_testing_adts
-  
-      .. youtube:: TODO
-         :divid: ch07_05_wt_testing_adts
-         :height: 315
-         :width: 560
-         :align: center
-
-|
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Test-Driven Development
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 6
 
-TODO
+.. TODO
 
 .. youtube:: KmuSmyR-3Bk
    :divid: ch07_06_vid_test_driven_development
@@ -399,29 +353,15 @@ TODO
 
 |
 
-TODO
+.. TODO
 
-**Exercise**
-
-
-.. admonition:: Walkthrough
-
-   .. reveal:: ch07_06_revealwt_test_driven_development
-  
-      .. youtube:: TODO
-         :divid: ch07_06_wt_test_driven_development
-         :height: 315
-         :width: 560
-         :align: center
-
-|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Testing with :code:`istringstream` and :code:`ostringstream`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 7
 
-TODO
+.. TODO
 
 .. youtube:: 7EBHrVxDe0w
    :divid: ch07_07_vid_testing_with_stringstreams
@@ -468,7 +408,7 @@ For example, for a triangle with side lengths of 3, 4, and 5, the function would
 
    .. reveal:: ch07_07_revealwt_testing_with_stringstreams
   
-      .. youtube:: TODO
+      .. youtube:: uyGsgTXdosw
          :divid: ch07_07_wt_testing_with_stringstreams
          :height: 315
          :width: 560
