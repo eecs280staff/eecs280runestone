@@ -25,3 +25,4 @@ Chapters
   05_strings_streams_io/toctree.rst
   06_compound_objects/toctree.rst
   07_adts_in_c/toctree.rst
+  08_adts_in_cpp/toctree.rst
