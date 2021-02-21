@@ -26,3 +26,5 @@ Chapters
   06_compound_objects/toctree.rst
   07_adts_in_c/toctree.rst
   08_adts_in_cpp/toctree.rst
+  09_inheritance/toctree.rst
+  10_polymorphism/toctree.rst

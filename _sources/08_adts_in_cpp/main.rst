@@ -4,12 +4,7 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="../_static/common/css/main4.css">
-   <link rel="stylesheet" href="../_static/common/css/code3.css">
-   <link rel="stylesheet" href="../_static/common/css/buttons3.css">
-   <link rel="stylesheet" href="../_static/common/css/exercises3.css">
    <script src="../_static/common/js/common2.js"></script>
-   <script src="../_static/common/js/lobster-exercises8.bundle.js"></script>
 
 .. raw:: html
 
@@ -169,7 +164,7 @@ Member Accessibility and Constructors
 .. TODO
 
 .. youtube:: 6zE7z1UNW_k
-   :divid: ch07_02_vid_member_accessibility_and_constructors
+   :divid: ch08_02_vid_member_accessibility_and_constructors
    :height: 315
    :width: 560
    :align: center
