@@ -20,15 +20,15 @@
       }
    </style>
 
-=======================================================================
+======================================================================
 Polymorphism
-=======================================================================
+======================================================================
 
 Today's lecture is all about polymorphism, which makes our code more flexible and enables even just a single line of code to potentially do many different things in different situations.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction to Polymorphism and Function Overloading
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
 .. youtube:: cOpLOkKZlfE
@@ -39,9 +39,9 @@ Introduction to Polymorphism and Function Overloading
 
 |
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Operator Overloading
------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 We can also apply the concept of overloading to *operators* as well. For example, the :code:`+` operator means one thing when it's used on :code:`int`, something else when it's used on `string`, and yet another thing when it's used for pointer arithmetic!
 
@@ -137,18 +137,18 @@ Note that both operators are implemented as non-member functions. Starter code (
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Subtype Polymorphism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
 While function overloading allows us to conveniently reuse a name for many different functions with different signatures, it doesn't fundamentally change our programming - we could have just named the functions differently (e.g. :code:`max_double`, :code:`max_int`, :code`max_Card`, etc.).
 
 Subtype polymorphism, on the other hand, is a game-changer. It works hand-in-hand with inheritance and essentially allows us to have a variable of a base type (e.g. :code:`Bird`) and then have that same variable potentially refer to any of the different derived types (e.g. :code:`Chicken`, :code:`Duck`, :code:`Eagle`, etc.), often changing which kind it refers to throughout the course of the program!
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Upcasts and Downcasts
------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 .. TODO
 
@@ -224,9 +224,9 @@ Consider the variables :code:`a`, :code:`b`, and :code:`c` below, and assume the
      :.*: Try again
 
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Virtual Functions
------------------------------------------------------------------------
+----------------------------------------------------------------------
 .. TODO
 
 We've now got a way (i.e. using pointers/references) to have a polymorphic variable that can potentially point to any type derived from a particular base, but there's still something missing...
@@ -323,14 +323,14 @@ Shown below are a hierarchy of fruit-based classes and a main function that make
      :.*: Try again
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Polymorphism and Design
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Overriding
------------------------------------------------------------------------
+----------------------------------------------------------------------
 .. TODO
 
 .. youtube:: tuMG7pBZyYU
@@ -341,9 +341,9 @@ Overriding
 
 |
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Pure Virtual Functions and Abstract Classes
------------------------------------------------------------------------
+----------------------------------------------------------------------
 .. TODO
 
 .. youtube:: gzfM9pPR_DA
@@ -354,9 +354,9 @@ Pure Virtual Functions and Abstract Classes
 
 |
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 The Liskov Substitution Principle
------------------------------------------------------------------------
+----------------------------------------------------------------------
 .. TODO
 
 .. youtube:: tVmY2Mm37CM
