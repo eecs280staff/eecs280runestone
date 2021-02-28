@@ -28,3 +28,5 @@ Chapters
   08_adts_in_cpp/toctree.rst
   09_inheritance/toctree.rst
   10_polymorphism/toctree.rst
+  11_container_adts_1/toctree.rst
+  12_container_adts_2_and_templates/toctree.rst

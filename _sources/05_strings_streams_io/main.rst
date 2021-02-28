@@ -17,15 +17,15 @@
       }
    </style>
 
-=======================================================================
+======================================================================
 Strings, Streams, and I/O
-=======================================================================
+======================================================================
 
 This lecture is all about strings, streams, and input/output (I/O). Fundamentally, these all involve processing data represented as sequences of characters, perhaps the text of a book, an encrypted message, or even the source code for one of our programs as it's about to be digested by the compiler!
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 C-Style Strings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
 We'll start with the most fundamental representation for a string: an **array of characters**. We'll call this a C-style string (or cstring for short), because this is the predominant form for strings in the original C language.
@@ -58,9 +58,9 @@ There are three main options for creating a cstring:
 - | :code:`char filename[1024];`
   | Create a "buffer" that may hold many different cstrings (one at a time). The array contains lots of space, because some strings might be longer than others. The placement of the null character lets us know the end of the current cstring living in the buffer. For example, we might want to iterate through a list of file names and process them.
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 Processing C-style Strings
------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 For almost any operation we would like to perform on a cstring, the basic idea is that we set up a traversal by pointer loop that iterates until it happens upon the null character. As the pointer walks through the string, we perform whatever data processing or modifications we need by dereferencing the pointer to work with individual characters.
 
@@ -98,18 +98,18 @@ This exercise is available on `Lobster <https://lobster.eecs.umich.edu>`_ as :co
 
 |
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 The :code:`<cstring>` Library
------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 Because cstrings are just built on fundamental types like arrays, :code:`char`, and pointers, you don't need to include any libraries to use them. However, many common operations for cstrings are available as functions in the :code:`<cstring>` Library, which you can :code:`#include` at the top of your files if you need them. You can find documentation for these in a number of places, but online resources like `http://www.cplusplus.com/reference/cstring/ <http://www.cplusplus.com/reference/cstring/>`_ are generally a good place to start.
 
 |
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 C++ Strings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
 You may have worked with the C++ :code:`string` type in your intro programming course or other previous experience. If not, or if you're primarily familiar with strings from a different language, we encourage you to check out one of several tutorials or documentation resources available online. (If you didn't take one of the intro courses here at UM, please also feel free to reach out and I can connect you with the material on :code:`string` from one of those courses.)
@@ -125,9 +125,9 @@ Why are we learning about cstrings if they're so...un-useful?
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 File Input and Output Streams
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
 .. youtube:: CLW-DIZ5AOw
@@ -201,9 +201,9 @@ Here's another example, which also showcases the :code:`stoi()` function, which 
 
 This example is also available on `Lobster <https://lobster.eecs.umich.edu>`_ as :file:`L05.3_cin_sum`
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Command Line Arguments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
 .. youtube:: mXJA13Go9qk
@@ -277,9 +277,9 @@ Again, for reference, here's the final code for the redact example, modified to 
      fout.close();
    }
 
------------------------------------------------------------------------
+----------------------------------------------------------------------
 The Structure of :code:`argv`
------------------------------------------------------------------------
+----------------------------------------------------------------------
 
 .. youtube:: fRfxPaOX7b4
    :divid: ch05_04_vid_argv_structure

@@ -17,15 +17,15 @@
       }
    </style>
 
-============================================================================================
+===========================================================================================
 Pointers
-============================================================================================
+===========================================================================================
 
 The fundamental idea of pointers is that we might like to work with **addresses** of objects in our programs as well as just their **values/data**. Why? Pretty much the same reason we use addresses anywhere else - sometimes we need to work **indirectly**. For example, in the "real world", an address book refers to the places that people live, but it doesn't literally contain those places! (That wouldn't even make sense.) Likewise, in a program we might want several different parts of our code to refer to the same data structure, but we don't want them all to literally have a local copy of that data. It would be better to know the address of the data and just go look it up when we need to.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Addresses and Pointers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
 First, let's take a look at how we can find out the address of variables/objects in our program using the :code:`&` operator.
@@ -89,9 +89,9 @@ Consider the program below and answer a few questions.
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Using Pointers and The Dereference Operator
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
 Now that we've got addresses, let's take a look at how to use those addresses to get back to the original object. This is called "dereferencing" a pointer - if we imagine a pointer as an arrow pointing to an object, dereferencing is just following the arrow.
@@ -185,9 +185,9 @@ Trace this code and draw a memory diagram as you go. Once you're finished, use y
 
 To check your work, find the file :file:`L03.1_pointers` in the EECS 280 code on `Lobster <https://lobster.eecs.umich.edu>`_. You can use the simulation to check your diagram and to see the correct output for each expression. If you'd like, you can also make a personal copy of the code and change it around to answer any "what-if" questions or get more practice predicting the program's behavior.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Null and Uninitialized Pointers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
 A regular pointer contains the address of some other object in your program, and will lead you to that object when you dereference it. But there are a few exceptional cases we should consider:
@@ -309,9 +309,9 @@ For each of the following code snippets, briefly describe what the **last** line
 |
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Pass-by-Pointer Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
 We can achieve an effect similar to pass-by-reference by using a pointer instead. Here's the basic idea - just like with pass-by-reference, we want to work with the original object (e.g. in a :code:`main` function) without making a copy when we pass it in as a parameter. So, instead of passing the original object, we pass its address as a pointer parameter. That parameter is technically copied, but who cares! A copy of an address will still get you back to the original location.
@@ -334,9 +334,9 @@ Load up the :code:`L03.3_swap-by-pointer` exercise on `Lobster <https://lobster.
 
    Paste your finished code for the exercise here.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Pointer Mischief
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
 Check out the code in the :file:`L03.4_pointer_mischief` exercise on `Lobster <https://lobster.eecs.umich.edu>`_. (The code is also included below.) The code uses a dubious function to get the address of the variable :code:`a`, calls a random function to print :code:`42` (this is definitely not a trick :D ), and then prints out :code:`a` through the address we got earlier. But all is not as it seems! What happens? Write your explanation in the box below. (Don't worry if you're not sure what happens - take some time and give it your best guess - I'll explain what's going in in the video farther below.)

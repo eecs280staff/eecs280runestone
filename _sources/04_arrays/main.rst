@@ -17,9 +17,9 @@
       }
    </style>
 
-=======================================================================
+======================================================================
 Arrays
-=======================================================================
+======================================================================
 
 You'll often want to represent containers or sequences of data in your programs, and how to do this in a way that makes the data easily (for you) and efficiently (for the computer) accessible is one of the fundamental questions in the *data structures*. In C++, there are a lot of options, and we'll take a look at many throughout the course. These same sorts of data structures are applicable in most any programming language and thinking through which data structures to use for a particular problem is one of the fundamentals of good programming.
 
@@ -30,9 +30,9 @@ We'll also see that arrays provide very efficient access to data in a couple dif
 - **Sequential Access**: Iterating through a sequence of elements from start to end.
 - **Random Access**: Accessing an element at a particular index (i.e. position) in the sequence.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Arrays and Memory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 1
 
 Arrays are a low-level abstraction over memory that we can fit into the memory model we've been building up so far...
@@ -91,9 +91,9 @@ Arrays are a low-level abstraction over memory that we can fit into the memory m
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Arrays, Pointers, and Pointer Arithmetic
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 2
 
 Because an array is essentially just a sequence of objects (one for each element in the array) that are laid out contiguously in memory, we can leverage pointers (i.e. addresses) to work with arrays. Here's one example, informally:
@@ -185,9 +185,9 @@ To check your work, find the file :file:`L04.pointer_arithmetic` in the EECS 280
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Pointer Comparisons
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
 Just like we can do arithmetic with pointers in a natural way, shifting addresses back and forth, we can also implement pointer comparisons in terms of addresses. Basically, :code:`ptr1 < ptr2` will be true if and only if :code:`ptr1` points to an address that is numerically lower than the address :code:`ptr2` points to. Or, put simply, if :code:`ptr1` is pointing somewhere before :code:`ptr2` in memory.
@@ -258,9 +258,9 @@ Here's a video of me saying that, plus a couple additional details/restrictions 
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Traversal by Pointer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
 There are two fundamental ways to approach sequential access of the elements in an array using a loop, which we might also call "traversal" or "iteration" through the array's elements:
@@ -338,9 +338,9 @@ Surprise! Each of the code snippets in the questions about contains a mistake. I
 
 |
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Array Parameters and Functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 5
 
 When working with arrays, it's often helpful to write helper functions that process the arrays in some way, perhaps using a loop to iterate through each element and perform some operation.
