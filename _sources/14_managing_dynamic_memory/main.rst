@@ -45,16 +45,16 @@ Let's review some of the issues we can run into with dynamic memory. What memory
      cout << a[2] << endl;
    }
 
-.. shortanswer:: ch13_00_ex_warm_up
+.. shortanswer:: ch14_00_ex_warm_up
 
    Please record a few of the mistakes and/or memory errors you found in the code above.
 
 .. admonition:: Walkthrough
 
-   .. reveal:: ch13_00_revealwt_warm_up
+   .. reveal:: ch14_00_revealwt_warm_up
   
-      .. youtube:: TODO
-         :divid: ch13_00_wt_warm_up
+      .. youtube:: sPqOvZb0c5A
+         :divid: ch14_00_wt_warm_up
          :height: 315
          :width: 560
          :align: center
@@ -68,8 +68,8 @@ RAII: A Strategy for Managing Dynamic Resources
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_01_vid_raii
+.. youtube:: uljsiNouVuY
+   :divid: ch14_01_vid_raii
    :height: 315
    :width: 560
    :align: center
@@ -86,8 +86,8 @@ Growable Containers
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_02_vid_growable_containers
+.. youtube:: NM9ONBQzM8c
+   :divid: ch14_02_vid_growable_containers
    :height: 315
    :width: 560
    :align: center
@@ -129,16 +129,18 @@ Using the following algorithm:
 4. Destroy old array
 5. Point elts to the new array
 
-.. shortanswer:: ch13_02_ex_grow
+If you would like, you can find this exercise on `Lobster <https://lobster.eecs.umich.edu>`_ (:file:`L14.2_IntSet`).
+
+.. shortanswer:: ch14_02_ex_grow
 
    Paste a copy of your implementation here.
 
 .. admonition:: Walkthrough
 
-   .. reveal:: ch13_02_revealwt_grow
+   .. reveal:: ch14_02_revealwt_grow
   
-      .. youtube:: TODO
-         :divid: ch13_02_wt_grow
+      .. youtube:: 5li19qh2TX8
+         :divid: ch14_02_wt_grow
          :height: 315
          :width: 560
          :align: center
@@ -152,8 +154,8 @@ Dynamic Resource Invariants
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_03_vid_dynamic_resource_invaraints
+.. youtube:: iB6QhLSM6pM
+   :divid: ch14_03_vid_dynamic_resource_invaraints
    :height: 315
    :width: 560
    :align: center
@@ -166,7 +168,7 @@ Dynamic Resource Invariants
 
 .. TODO: what can RAII do for us and what can it not?
 
-.. fillintheblank:: ch13_03_ex_memory_leaks
+.. fillintheblank:: ch14_03_ex_dynamic_resource_invariants
    :casei:
 
    Which of these functions leak memory? Write either "ok" or "memory leak". You should assume the constructors and destructor for :code:`UnsortedSet` are defined (correctly) as earlier.
@@ -222,19 +224,19 @@ Dynamic Resource Invariants
      
    - :.*ok.*: Correct! (The set will internally store the inserted numbers in a dynamic array and its destructor will clean that up.)
      :.*: Try again
-   - :.*memory *leak.*: Correct! (The set's destructor can clean up its own internal memory when it is destroyed, but the problem is the set itself is never destroyed since it's created with :code:`new` but never freed with :code:`delete`.)
+   - :.*memory leak.*: Correct! (The set's destructor can clean up its own internal memory when it is destroyed, but the problem is the set itself is never destroyed since it's created with :code:`new` but never freed with :code:`delete`.)
      :.*: Try again
-   - :.*memory *leak.*: Correct! (The set can clean up the dynamic array it uses to store the pointers to the :code:`2` and :code:`3`, but it only cleans up that array - it doesn't know to clean up the objects created with :code:`new` in :code:`main()`.)
+   - :.*memory leak.*: Correct! (The set can clean up the dynamic array it uses to store the pointers to the :code:`2` and :code:`3`, but it only cleans up that array - it doesn't know to clean up the objects created with :code:`new` in :code:`main()`.)
      :.*: Try again
    - :.*ok.*: Correct! (The set itself is created on the heap and cleaned up with :code:`delete`, and the internal array it uses is also cleaned up when its destructor is called as a result of the :code:`delete`.)
      :.*: Try again
 
 .. admonition:: Walkthrough
 
-   .. reveal:: ch13_03_revealwt_memory_leaks
+   .. reveal:: ch14_03_revealwt_dynamic_resource_invariants
   
-      .. youtube:: TODO
-         :divid: ch13_03_wt_memory_leaks
+      .. youtube:: 6s5tvv3aDE4
+         :divid: ch14_03_wt_dynamic_resource_invariants
          :height: 315
          :width: 560
          :align: center

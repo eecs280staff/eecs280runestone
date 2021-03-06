@@ -78,6 +78,8 @@ Consider the :code:`Bird` class and code in :code:`main()` below. :code:`Bird` d
 
    Take a few minutes to mentally trace through the code in :code:`main()` and write down what you think will be printed. Once you're finished, you can find the code on `Lobster <https://lobster.eecs.umich.edu>`_ (:file:`L13.1_Bird_lifetimes`) and use the simulation to double check.
 
+(There's a walkthrough at the start of the next video.)
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Memory Model and Introduction to the Heap
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -85,8 +87,8 @@ Memory Model and Introduction to the Heap
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_01_vid_memory_model_and_intro_to_heap
+.. youtube:: t7pidvzGGoY
+   :divid: ch13_01_vid_memory_model_and_intro_to_heap
    :height: 315
    :width: 560
    :align: center
@@ -100,8 +102,8 @@ Using the :code:`new` and :code:`delete` Operators
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_02_vid_new_and_delete
+.. youtube:: 3yre1os6dg0
+   :divid: ch13_02_vid_new_and_delete
    :height: 315
    :width: 560
    :align: center
@@ -195,15 +197,7 @@ Let's add dynamic memory with :code:`new` and :code:`delete` to another example 
    - :1: Correct!
      :.*: Try again
 
-.. admonition:: Walkthrough
-
-   .. reveal:: ch13_02_revealwt_whac_a_mole
-  
-      .. youtube:: TODO
-         :divid: ch13_02_wt_whac_a_mole
-         :height: 315
-         :width: 560
-         :align: center
+.. TODO walkthrough
 
 |
 
@@ -218,8 +212,8 @@ Memory Leaks
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_03_vid_memory_leaks
+.. youtube:: cNaN3R8HLJw
+   :divid: ch13_03_vid_running_out_of_memory
    :height: 315
    :width: 560
    :align: center
@@ -288,14 +282,14 @@ Memory Leaks
 
        - |blank|
    
-       * - .. code-block:: cpp
-           
-              int main() {
-                int *arr = new int[10000];
-                for (int i = 0; i < 10000; ++i) {
-                  arr[i] = i;
-                }
+     * - .. code-block:: cpp
+         
+            int main() {
+              int *arr = new int[10000];
+              for (int i = 0; i < 10000; ++i) {
+                arr[i] = i;
               }
+            }
 
        - |blank|
    
@@ -311,21 +305,19 @@ Memory Leaks
    - :.*ok.*: Correct! (The code creates a large array of ~40KB, but it is stored on the heap, which has plenty of memory for that.)
      :.*: Try again
 
-.. admonition:: Walkthrough
 
-   .. reveal:: ch13_03_revealwt_memory_leaks
-  
-      .. youtube:: TODO
-         :divid: ch13_03_wt_memory_leaks
-         :height: 315
-         :width: 560
-         :align: center
+
+.. youtube:: Fov74Y7KQfA
+   :divid: ch13_03_vid_memory_leaks
+   :height: 315
+   :width: 560
+   :align: center
 
 |
 
 
 ----------------------------------------------------------------------
-Double Free and Non-Heap Delete
+Double Free and Non-Heap Deletes
 ----------------------------------------------------------------------
 
 While we have to make sure we clean up all the memory that we create with :code:`new` by cleaning it up using :code:`delete`, we also have to watch out for a few potential errors:
@@ -333,9 +325,17 @@ While we have to make sure we clean up all the memory that we create with :code:
 - Deleting an object twice usually results in a crash.
 - Deleting a non-heap object usually results in a crash.
 
+.. youtube:: qdUyIM2I2lI
+   :divid: ch13_03_vid_double_free_intro
+   :height: 315
+   :width: 560
+   :align: center
+
+|
+
 **Exercise**
 
-.. fillintheblank:: ch13_03_ex_memory_leaks
+.. fillintheblank:: ch13_03_ex_double_free
    :casei:
 
    How many of the following programs will likely crash due to one of the two :code:`delete` errors mentioned above? Write either "ok" or "crash".
@@ -426,15 +426,12 @@ While we have to make sure we clean up all the memory that we create with :code:
    - :.*crash.*: Correct! (The code creates several objects in the first loop and attempts to destroy them in the second, but it just ends up trying to delete the last of those objects a bunch of times.)
      :.*: Try again
 
-.. admonition:: Walkthrough
 
-   .. reveal:: ch13_03_revealwt_memory_leaks
-  
-      .. youtube:: TODO
-         :divid: ch13_03_wt_memory_leaks
-         :height: 315
-         :width: 560
-         :align: center
+.. youtube:: sPudJ2qluCM
+   :divid: ch13_03_vid_double_free_walkthrough
+   :height: 315
+   :width: 560
+   :align: center
 
 |
 
@@ -444,8 +441,8 @@ Dangling Pointers
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_03_vid_memory_leaks
+.. youtube:: ce8NcPvXoM4
+   :divid: ch13_03_vid_dangling_pointers
    :height: 315
    :width: 560
    :align: center
@@ -454,14 +451,14 @@ Dangling Pointers
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-What Can You Do With Dynamic Memory?
+Uses for Dynamic Memory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
 
 .. TODO
 
-.. youtube:: TODO
-   :divid: ch12_04_vid_uses_for_dynamic_memory
+.. youtube:: s8vXcgRCrW0
+   :divid: ch13_04_vid_uses_for_dynamic_memory
    :height: 315
    :width: 560
    :align: center
