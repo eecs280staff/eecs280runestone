@@ -30,3 +30,5 @@ Chapters
   10_polymorphism/toctree.rst
   11_container_adts_1/toctree.rst
   12_container_adts_2_and_templates/toctree.rst
+  13_dynamic_memory/toctree.rst
+  14_managing_dynamic_memory/toctree.rst
