@@ -222,6 +222,8 @@ Some more examples:
    *ptr2 = 10;          // Tries to write a 10 to address 0 in memory, which will almost
                         // certainly crash (easier to debug than undefined behavior though!)
 
+|
+
 Something else to consider - how do we safely use null pointers? Basically, if a pointer in our program might be null (i.e. sometimes it might not be pointing at anything), we'll often need to check for that in our control flow logic. For example:
 
 .. code-block:: cpp
@@ -231,6 +233,8 @@ Something else to consider - how do we safely use null pointers? Basically, if a
    if (ptr != nullptr) {
      // If we get in here, it's safe to dereference and do something with *ptr
    }
+
+|
 
 There's also a cute way to check whether a pointer is null - just throw the pointer itself in the :code:`if` condition. This works because the :code:`if` will try to conver it to a :code:`bool`, and it just so happens that non-null pointers will convert to :code:`true` and null pointers will convert to :code:`false`. (Kind of like the way nonzero numbers convert to :code:`true` and :code:`0` converts to :code:`false`.)
 
@@ -242,6 +246,8 @@ There's also a cute way to check whether a pointer is null - just throw the poin
      // If we get in here, it's safe to dereference and do something with *ptr
      // That's because ptr would only turn into a true if it wasn't null
    }
+
+|
 
 **Exercise**
 
