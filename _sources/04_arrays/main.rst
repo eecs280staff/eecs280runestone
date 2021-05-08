@@ -230,15 +230,15 @@ Here's a video of me saying that, plus a couple additional details/restrictions 
    |blank| :code:`ptr1 < arr + 5`
 
    - :false|f: Correct!
-      :.*: Try again
+     :.*: Try again
    - :true|t: Correct!
-      :.*: Try again
+     :.*: Try again
    - :true|t: Correct!
-      :.*: Try again
+     :.*: Try again
    - :false|f: Correct!
-      :.*: Try again
+     :.*: Try again
    - :true|t: Correct!
-      :.*: Try again
+     :.*: Try again
 
 |
 

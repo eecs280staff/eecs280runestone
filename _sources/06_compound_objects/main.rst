@@ -21,6 +21,10 @@
 Const and Compound Objects
 ======================================================================
 
+In today's lecture we'll take a look at the basics of compound objects using :code:`struct` definitions to create our own custom data types composed of several different members that may each have their own distinct type. These custom types allow us to model the real-world objects and/or concepts and will be the foundation for C-style abstract data types, which we'll see in the next lecture.
+
+But first, let's take a detour to formally acknowledge the `const` keyeword, which has been showing up and will start showing up even more in the near future...
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The :code:`const` Keyword
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

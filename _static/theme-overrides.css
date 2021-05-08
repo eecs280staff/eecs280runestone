@@ -89,3 +89,8 @@ blockquote {
   background-color: #f8d7da;
   border-color: #f5c6cb;
 }
+
+pre {
+  /* Temporary fix for runestone css regression */
+  margin: 0 0 1em !important;
+}
