@@ -21,7 +21,15 @@
 Abstract Data Types in C
 ======================================================================
 
-.. TODO
+As we start to work with larger, more complex programs, we'll leverage abstraction to help manage that complexity. We've already discussed *procedural abstraction*, i.e. using functions to break down the flow of our program into manageable sub-tasks. Today, we'll take a look at one model for *data abstraction* realized by defining our own **Abstract Data Types (ADTs)**.
+
+Specifically, we're going to define some conventions for ADTs as they could be implemented in the C language (which is both the precursor to C++ and also a language that still sees use in some lower-level systems programming to this day). We're starting here for a few reasons:
+
+- The C style will expose more plainly some of the basic fundamentals of ADTs
+- More practice with pointers! (spoiler alert, we'll be using pointers)
+- Additional language features we'll see for C++ style ADTs will naturally build on the conventions we define first in the C style
+
+Structs form the foundation of ADTs in C, acting as a data representation that allows us to model heterogeneous real-world objects. What makes a full ADT is the introduction of associated **behaviors** (i.e. functions) as well as plain **data**.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Introduction to ADTs in C
