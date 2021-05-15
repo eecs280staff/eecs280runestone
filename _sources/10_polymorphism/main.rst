@@ -359,10 +359,91 @@ The Liskov Substitution Principle
 ----------------------------------------------------------------------
 .. TODO
 
-.. youtube:: tVmY2Mm37CM
+.. youtube:: BURIuDmEEK0
    :divid: ch10_03_vid_liskov_substitution_principle
    :height: 315
    :width: 560
    :align: center
+
+|
+
+**Exercise**
+
+.. shortanswer:: ch10_03_ex_liskov_substitution_principle_1
+
+  Consider this pair of base and derived classes. Is the derived class a proper subtype? (i.e. Does it satisfy the Liskov Substitution Principle?) Explain your reasoning.
+  
+  .. code-block:: cpp
+        
+     class Player {
+       // EFFECTS: Returns a card from player's
+       // hand, following the rules of euchre.
+       virtual Card play_card();
+     };
+
+  .. code-block:: cpp
+    
+     class DerivedPlayer : public Player {
+       // EFFECTS: Always returns the ace of clubs
+       Card play_card() override;
+     };
+
+.. shortanswer:: ch10_03_ex_liskov_substitution_principle_2
+
+  Consider this pair of base and derived classes. Is the derived class a proper subtype? (i.e. Does it satisfy the Liskov Substitution Principle?) Explain your reasoning.
+  
+  .. code-block:: cpp
+        
+     class PPMReader {
+       // EFFECTS: Reads an image from a stream
+       // REQUIRES: The stream must contain
+       // image data in PPM format. Pixels must
+       // be separated by a single space
+       // character.
+       virtual Image read_ppm_image(istream &is);
+     };
+
+  .. code-block:: cpp
+    
+     class DerivedPPMReader : public PPMReader {
+       // EFFECTS: Reads an image from a stream
+       // REQUIRES: The stream must contain
+       // image data in PPM format. Pixels may be
+       // separated by any kind of whitespace.
+       Image read_ppm_image(istream &is) override;
+     };
+
+.. shortanswer:: ch10_03_ex_liskov_substitution_principle_3
+
+  Consider this pair of base and derived classes. Is the derived class a proper subtype? (i.e. Does it satisfy the Liskov Substitution Principle?) Explain your reasoning.
+  
+  .. code-block:: cpp
+        
+     class Unicorn {
+       // EFFECTS: The unicorn fires a laser.
+       // Returns the power of the laser beam,
+       // which is at least 100kw.
+       virtual double fire_laser_beam();
+     };
+
+  .. code-block:: cpp
+    
+     class DerivedUnicorn : public Unicorn {
+       // EFFECTS: The unicorn fires a massive
+       // laser. Returns the power of the laser
+       // beam, which is over 9000kw.
+       double fire_laser_beam() override;
+     };
+
+
+.. admonition:: Walkthrough
+
+  .. reveal:: ch10_03_revealwt_liskov_substitution_principle
+ 
+     .. youtube:: sj2ZjMw6jCs
+        :divid: ch10_03_wt_liskov_substitution_principle
+        :height: 315
+        :width: 560
+        :align: center
 
 |

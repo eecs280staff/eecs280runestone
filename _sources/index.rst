@@ -23,15 +23,6 @@ Chapters
   05_strings_streams_io/toctree.rst
   06_compound_objects/toctree.rst
   07_adts_in_c/toctree.rst
-
-.. raw:: html
-
-  <div style="display: none">
-
-.. toctree::
-  :numbered: 2
-  :maxdepth: 1
-   
   08_adts_in_cpp/toctree.rst
   09_inheritance/toctree.rst
   10_polymorphism/toctree.rst
@@ -39,7 +30,3 @@ Chapters
   12_container_adts_2_and_templates/toctree.rst
   13_dynamic_memory/toctree.rst
   14_managing_dynamic_memory/toctree.rst
-
-.. raw:: html
-
-  </div>
