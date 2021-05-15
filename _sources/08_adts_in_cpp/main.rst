@@ -388,6 +388,92 @@ Default Initialization
 
 .. TODO
 
+.. fillintheblank:: ch08_04_ex_default_initialization
+   :casei:
+
+   Determine whether each of the following classes is default-constructible. For each, write "yes" or "no".
+   
+   .. list-table::
+     :align: left
+   
+     * - .. code-block:: cpp
+         
+            class Student {
+            private:
+              string name;
+              int num_credits;
+
+            public:
+              Student(const string &name, int num_credits)
+               : name(name), num_credits(num_credits) { }
+            };
+
+            int main() {
+              // Would this be allowed?
+              Student s;
+            }
+   
+       - |blank|
+   
+     * - .. code-block:: cpp
+         
+            class Pickle {
+            private:
+              bool is_sweet;
+              bool is_sour;
+              bool is_spicy;
+
+            public:
+              Pickle()
+               : Pickle(false, false, false) { }
+
+              Pickle(bool is_sweet, bool is_sour, bool is_spicy)
+               : is_sweet(is_sweet),
+                 is_sour(is_sour),
+                 is_spicy(is_spicy) { }
+            };
+
+            int main() {
+              // Would this be allowed?
+              Pickle p;
+            }
+   
+       - |blank|
+   
+     * - .. code-block:: cpp
+         
+            class Cow {
+            private:
+              string name;
+              int num_spots;
+            };
+
+            int main() {
+              // Would this be allowed?
+              Cow c;
+            }
+   
+       - |blank|
+
+   - :.*no.*: Correct!
+     :.*: Try again
+   - :.*yes.*: Correct!
+     :.*: Try again
+   - :.*yes.*: Correct!
+     :.*: Try again
+
+.. admonition:: Walkthrough
+
+   .. reveal:: ch08_04_revealwt_default_initialization
+  
+      .. youtube:: 4c1Ncn7Rw_4
+         :divid: ch08_04_wt_default_initialization
+         :height: 315
+         :width: 560
+         :align: center
+
+|
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Best Practices for ADTs with Classes
