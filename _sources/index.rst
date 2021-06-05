@@ -33,3 +33,4 @@ Chapters
   15_linked_lists/toctree.rst
   16_deep_copies/toctree.rst
   17_iterators/toctree.rst
+  18_recursion_and_tail_recursion/toctree.rst
