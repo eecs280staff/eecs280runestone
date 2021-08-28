@@ -36,6 +36,13 @@ I believe this is a great way to engage with the material! (It's not only for th
 
 You're welcome (and encouraged!) to work with others on the lectures, discussing the videos/examples or working through exercises together. I'll also start a Piazza thread for each lecture where you can ask questions, discuss exercises, etc. Please also feel free to come see me in office hours with any questions!
 
+.. admonition:: Fall 2021
+
+   These asynchronous lectures were developed in a previous term. A few course polices have changed since these videos were recorded, and of course any dates/deadlines I mention in the videos are now very wrong. Look for boxes like this one where I'll point out any differences.
+
+   Or, you might want to attend or watch a recording of one of my live Fall 2021 lectures. Then, you can return back to the async format for the rest of the lectures, if you like.
+
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Big Picture
@@ -58,6 +65,11 @@ Course Essentials and Grading
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 3
 
+.. admonition:: Fall 2021
+
+   - Lectures are **not** required for credit. You do not "turn them in" anywhere. The 5% mentioned for lectures in the video is changed over to 1% extra on each of the projects this term.
+   - The office hours times in the video are **not** accurate. See `eecs280.org <https://eecs280.org>`_ for my office hours this term.
+
 Let's take a look at the major parts of the course, including resources and websites you'll use to engage with the course and how the overall course is graded.
 
 .. youtube:: lLU6RRCZHFw
@@ -75,6 +87,12 @@ Don't worry if this all seems a bit overwhelming. There are a lot of different c
 Lab Groups and Exercises
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 4
+
+.. admonition:: Fall 2021
+
+   - The dates in this video are **not** correct for this term. See `eecs280.org <https://eecs280.org>`_ for correct dates.
+   - Labs are held **in-person** this term (not via Zoom).
+   - The lab times and deadlines in the video are weird since there were two labs per week in spring term. We only have one lab per week this term, and all labs are due on the **Wednesday** following your lab meeting.
 
 Lectures are followed up with labs, where you work with a small group of other students to explore and pratice the material further.
 
@@ -102,8 +120,6 @@ You get to exercise the skills you learn in lecture and lab in 5 programming pro
   :align: center
 
 |
-
-**Oops!** In the video above, I said "*everything in 280 is due at 8pm*". I should have said, "*the projects are due at 8pm, and everything else is due at 11:59pm*". (Also, we're technically in EDT rather than EST - ugh, timezones are hard.)
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -177,6 +193,10 @@ Getting Help in EECS 280
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 9
 
+.. admonition:: Fall 2021
+
+   - A difference for "coaching" this term - we'll be offering coaching in a 1-on-1 format rather than a group setting. Use the form linked on our website to request a coach.
+
 A valuable skill in 280 is knowing how and when to ask for help! (This applies to the "real world" as well! That's why sites like `https://stackoverflow.com/ <https://stackoverflow.com/>`_ exist and are so popular. Real people ask for help all the time!)
 
 .. youtube:: Fl64YLuRB2Q
@@ -193,18 +213,18 @@ Wrapping Up and Next Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. section 10
 
-.. mchoice:: ch01_01_ex_compile_errors
-  :answer_a: Select this one
-  :answer_b: DO NOT select this one
-  :answer_c: DO NOT select this one
-  :answer_d: DO NOT select this one
-  :correct: a
-  :feedback_a: Good job!
-  :feedback_b: Seriously, you won't get any credit for selecting this one...
-  :feedback_c: Seriously, you won't get any credit for selecting this one...
-  :feedback_d: Seriously, you won't get any credit for selecting this one...
+.. .. mchoice:: ch01_01_ex_compile_errors
+..   :answer_a: Select this one
+..   :answer_b: DO NOT select this one
+..   :answer_c: DO NOT select this one
+..   :answer_d: DO NOT select this one
+..   :correct: a
+..   :feedback_a: Good job!
+..   :feedback_b: Seriously, you won't get any credit for selecting this one...
+..   :feedback_c: Seriously, you won't get any credit for selecting this one...
+..   :feedback_d: Seriously, you won't get any credit for selecting this one...
 
-  First, select answer A below. This lecture didn't have any "real" exercises, so we'll use this to measure your completion for lecture 1.
+..   First, select answer A below. This lecture didn't have any "real" exercises, so we'll use this to measure your completion for lecture 1.
 
 
 Let's take a look at what's coming next!
