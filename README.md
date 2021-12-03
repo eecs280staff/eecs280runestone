@@ -1,4 +1,4 @@
-# ENGR 280 Runestone
+# EECS 280 Runestone
 
 This repository contains a runestone "book" with interactive lectures and exercises for EECS 280. These are primarily for James Juett's W21 lectures (for now), but others are welcome to use and/or contribute!
 
